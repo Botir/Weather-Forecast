@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # internal apps
+    'wetaherapi.weather',
+
     # external apps
     'rest_framework',
 ]
