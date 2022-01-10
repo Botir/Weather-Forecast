@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  web:
+    container_name: dev_backend
+    build:
+      context: .
+    env_file:
+      - dev.env
+    ports:
+      - "8000:8000"
+    depends_on:
+     - db
+  db:
+    container_name: dev_db
+    image: postgres:12.0-alpine
+    env_file:
+      - dev.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data:
